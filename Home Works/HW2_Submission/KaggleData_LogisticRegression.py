@@ -9,6 +9,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, accuracy_score
 import csv
 import warnings
+
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 

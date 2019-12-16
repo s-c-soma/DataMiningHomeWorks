@@ -11,6 +11,24 @@ users = {'users[0][email]': 'test@mydept.edu',
         'users[0][createpassword]': 1,
         'users[0][username]': 'Testst'}
 
+#create user
+print('####core_user_create_users')
+#token = "2bdb462ca65b5d37c65a0be9035c40f4"
+#function='core_user_create_users'
+
+url = config('core_user_create_users')
+
+users = {"users[0][createpassword]": 1,
+         "users[0][username]": "testuser_oidc",
+         "users[0][auth]": "oidc",
+         "users[0][firstname]": "test_oidc",
+         "users[0][lastname]": "lastname_test_oidc",
+         "users[0][email]": "testuser_oidc@gmail.com",}
+response= requests.post(url,params=users)
+print(response.status_code)
+print(response.content)
+
+
 '''
 my $params = {
     'wstoken' => '6749ad13bc4af',
@@ -104,17 +122,7 @@ print(response.status_code)
 print(response.content)
 
 
-#create user
-print('####core_user_create_users')
-token = "2bdb462ca65b5d37c65a0be9035c40f4"
-function='core_user_create_users'
-#url = 'http://localhost/webservice/rest/server.php?wstoken={0}&wsfunction={1}&moodlewsformat=json'.format(token,function)
-url = config('core_user_create_users')
 
-users = {"users[0][createpassword]": 1, "users[0][username]": "testuser5", "users[0][auth]": "manual", "users[0][firstname]": "test5", "users[0][lastname]": "lastname_test5","users[0][email]": "abc5@gmail.com",}
-response= requests.post(url,params=users)
-print(response.status_code)
-print(response.content)
 
 
 
